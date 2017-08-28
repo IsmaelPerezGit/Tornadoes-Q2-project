@@ -17,7 +17,7 @@ router.post('/new', function(req, res, next){
   if (req.body.password === req.body.confirm) {
     knex.raw(`insert into users (username, password) values ('${req.body.username}', '${req.body.password}')`)
       .then(function(){
-        res.redirect('/')
+        res.redirect('/login')
       });
   } else {
     res.send("Passwords do not match")
@@ -32,10 +32,16 @@ router.post('/:id/delete', function(req, res, next){
     });
 });
 
+//Get login form
+router.get('/login', function(req, res, next){
+  res.render('users/login')
+});
+
 //Show single user
 router.get('/:id', function(req, res, next){
   res.send("single user show page")
 });
+
 
 //Edit user form
 router.get('/:id/edit', function(req, res, next){
