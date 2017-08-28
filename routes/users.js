@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
 //Create new user form
 router.get('/new', function(req, res, next){
-  res.send("get request new user page")
+  res.render('users/new')
 });
 
 //Post new user to database
@@ -29,7 +29,7 @@ router.get('/:id', function(req, res, next){
 
 //Edit user form
 router.get('/:id/edit', function(req, res, next){
-  res.send("edit user form")
+  res.render('users/edit')
 });
 
 //Update user in database
