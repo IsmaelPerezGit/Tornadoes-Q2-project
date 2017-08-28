@@ -4,14 +4,14 @@ block content
 
   h1 Edit Account
 
-  form(method="post" action="/users/:id/edit")
-    input(type="text", name="username", placeholder="Username")
+  form(method="post" action="/users/#{data.id}/edit")
+    input(type="text", name="username", value="#{data.username}")
     br
-    input(type="password", name="password", placeholder="Password")
+    input(type="password", name="password", placeholder="New password")
     br
-    input(type="password", name="confirm", placeholder="Confirm password")
+    input(type="password", name="confirm", placeholder="Confirm new password")
     br
     input(type="submit" value="Submit")
     br
-  form(method="post", action="/users/:id/delete")
+  form(method="post", action="/users/#{data.id}/delete")
     input(type="submit" value="Delete Account")

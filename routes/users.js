@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-// var knex = require ('../db/knex')
+var knex = require ('../db/knex')
 
 //Splash page
 router.get('/', function(req, res, next) {
@@ -14,12 +14,22 @@ router.get('/new', function(req, res, next){
 
 //Post new user to database
 router.post('/new', function(req, res, next){
-  res.send("post request to new")
+  if (req.body.password === req.body.confirm) {
+    knex.raw(`insert into users (username, password) values ('${req.body.username}', '${req.body.password}')`)
+      .then(function(){
+        res.redirect('/')
+      });
+  } else {
+    res.send("Passwords do not match")
+  };
 });
 
 //Delete user from database
 router.post('/:id/delete', function(req, res, next){
-  res.send("delete user")
+    knex.raw(`delete from users where users.id = ${req.params.id}`)
+    .then(function(){
+      res.redirect('/')
+    });
 });
 
 //Show single user
@@ -29,12 +39,18 @@ router.get('/:id', function(req, res, next){
 
 //Edit user form
 router.get('/:id/edit', function(req, res, next){
-  res.render('users/edit')
+    knex.raw(`select * from users where users.id = ${req.params.id}`)
+      .then(function(data){
+        res.render('users/edit', {data: data.rows[0]})
+    });
 });
 
 //Update user in database
 router.post('/:id/edit', function(req, res, next){
-  res.send("update user in database")
+  knex.raw(`update users set username = '${req.body.name}', password = '${req.body.password}' where users.id = ${req.params.id}`)
+  .then(function(){
+    res.redirect(`/users/${req.params.id}`)
+  });
 });
 
 
