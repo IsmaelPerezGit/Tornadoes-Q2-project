@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var knex = require ('../db/knex')
+var bcrypt = require ('bcrypt')
 
 //Splash page
 router.get('/', function(req, res, next) {
@@ -36,6 +37,22 @@ router.post('/:id/delete', function(req, res, next){
 router.get('/login', function(req, res, next){
   res.render('users/login')
 });
+
+//Post login
+router.post('/login', function (req,res, next) {
+  knex.raw(`select * from users where username = '${req.body.username}'`)
+  .then(function (user) {
+    var userID = user.rows[0].id
+    bcrypt.compare(req.body.password, user.rows[0].password, function (err, resp) {
+      if (resp) {
+        res.redirect(`/users/${userID}`)
+      } else {
+        res.send("Login failed!")
+      }
+    })
+  })
+});
+
 
 //Show single user
 router.get('/:id', function(req, res, next){
