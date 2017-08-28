@@ -1,6 +1,7 @@
 # Tornadoes-Q2-project
 
-```User Stories
+```
+User Stories
  -- As a user when I visit the home page, I see 3 options Login, Create Account, View Drawing
  -- When I click create account I redirect to /users/create with create account form
  -- When I create account I am redirected to the login page
@@ -11,7 +12,7 @@
  -- As a user, when I click edit/update, I am redirect to an edit/update form
  -- As a user, when I click submit edit/update button my information reflects changes
  -- As a user, when I click delete account button, my account is deleted
- -- As a non logged in user, I can still view drawings, but cannot contribute to drawing or chat
+ -- As a non-logged in user, I can still view drawings, but cannot contribute to drawing or chat
 
  Drawing
  -- As a user I can choose a color
