@@ -16,10 +16,12 @@ router.get('/new', function(req, res, next){
 //Post new user to database
 router.post('/new', function(req, res, next){
   if (req.body.password === req.body.confirm) {
-    knex.raw(`insert into users (username, password) values ('${req.body.username}', '${req.body.password}')`)
+    bcrypt.hash(req.body.password, 8, function(err, hash) {
+    knex.raw(`insert into users (username, password) values ('${req.body.username}', '${hash}')`)
       .then(function(){
         res.redirect('/login')
-      });
+      })
+    });
   } else {
     res.send("Passwords do not match")
   };
