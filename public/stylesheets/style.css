@@ -1,8 +1,43 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.loginBackground{
+	position:fixed;
+	top:0;
+	left:0;
+	min-width:100%;
+	min-height: 100%;
+}
+
+.loginContainer, body{
+	height: 100%;
+	background-color: lightgreen;
+}
+
+.indexRow1{
+	background-color: orange;
+}
+
+.indexRow2{
+	background-color: yellow;
+}
+
+.indexRow3{
+	background-color: teal;
+}
+
+body{
+	background-image: url("/images/login_background.jpg")
+	background-size: 100%;
+	background-repeat: no-repeat;
 }

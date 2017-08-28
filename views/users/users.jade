@@ -1,16 +1,27 @@
 extends ../layout
 
 block content
-
-  h1 Welcome to Users Home page
-
-  button
-    a(href='/users/login') Log In
-  br
-  br
-  button
-    a(href='/users/new') Create an account
-  br
-  br
-  button
-    a(href='/drawings') Check out some drawings
+  div(class = "loginContainer")
+    //- img(class="loginBackground" src= "images/login_background.jpg")
+    section(class = "row")
+      div(class = "col-md-12 indexRow1")
+        h1 Title
+    section(class = "row")
+      div(class = "col-md-12 indexRow2")
+        form(method="POST" action="/users/login")
+          p Username
+          input(type="text" name="username" placeholder="Enter Username")
+          br
+          br
+          p Password
+          input(type="text" name="password" placeholder="Enter Password")
+          br
+          button
+            a(href='/users/login') Log In      
+    section(class = "row")
+      div(class = "col-md-12 indexRow3")
+        button
+          a(href='/users/create') Register
+      
+        button
+          a(href='/drawings') Skip Login
