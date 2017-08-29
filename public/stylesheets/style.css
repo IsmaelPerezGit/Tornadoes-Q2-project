@@ -3,41 +3,113 @@
 	margin: 0;
 }
 
-body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
 a {
-  color: #00B7FF;
+  color: #443730;
 }
 
-.loginBackground{
-	position:fixed;
-	top:0;
-	left:0;
-	min-width:100%;
-	min-height: 100%;
+
+a:hover{
+	color: red;
+	text-decoration: none;
 }
 
-.loginContainer, body{
-	height: 100%;
-	background-color: lightgreen;
+
+.loginContainer {
+  background: url("/images/login_background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	height: 100vh;
+}
+
+.loginTitle{
+	color:red;
+	padding-left: 62%;
+	padding-top: 12vh;
+	font-size: 75px;
+	font-family: 'Coming Soon', cursive;
 }
 
 .indexRow1{
-	background-color: orange;
+	height:28vh;
 }
 
 .indexRow2{
-	background-color: yellow;
+	height: 34vh;
+	font-family: 'Coming Soon', cursive;
+	font-size: 18px;
+	color: #3D4849;
+}
+
+
+.loginRow{
+	margin-left: 63.8%;
 }
 
 .indexRow3{
-	background-color: teal;
+	font-family: 'Coming Soon', cursive;
+	font-size: 18px;
 }
 
-body{
-	background-image: url("/images/login_background.jpg")
-	background-size: 100%;
-	background-repeat: no-repeat;
+.logInButton{
+	background-color: Transparent;
+	background-repeat:no-repeat;
+	border: none;
+	cursor:pointer;
+	overflow: hidden;
+	margin-left: 68.5%;
+	margin-top: 3vh;
+}
+
+.registerButton{
+	background-color: Transparent;
+	background-repeat:no-repeat;
+	border: none;
+	cursor:pointer;
+	overflow: hidden;
+	margin-left: 64.5%;
+}
+
+
+.skipLoginButton{
+	background-color: Transparent;
+	background-repeat:no-repeat;
+	border: none;
+	cursor:pointer;
+	overflow: hidden;
+	margin-left: 2%;
+}
+
+
+.newContainer{
+	background: url("/images/login_background.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100vh;
+}
+
+.newTitle{
+	color:red;
+	padding-left: 60%;
+	padding-top: 15vh;
+	font-size: 45px;
+	font-family: 'Coming Soon', cursive;
+}
+
+.newForm{
+	margin-top: 1vh;
+	height: 34vh;
+	font-family: 'Coming Soon', cursive;
+	font-size: 18px;
+	color: #3D4849;
+	margin-left: 63%;
+}
+
+.newSubmitButton{
+	color: #493F33
+	border:none;
+
 }
