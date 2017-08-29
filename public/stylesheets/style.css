@@ -113,3 +113,67 @@ a:hover{
 	border:none;
 
 }
+
+.showContainer{
+	background: url("/images/login_background.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100vh;
+}
+
+.showRow{
+	margin-top: 8vh;
+	margin-left: 12%;
+	font-family: 'Coming Soon', cursive;
+	width: 75%;
+}
+
+.showRow button{
+	background-color: Transparent;
+	background-repeat:no-repeat;
+	border: none;
+	cursor:pointer;
+	overflow: hidden;
+	color: red;
+}
+
+.showRow input{
+	background-color: Transparent;
+	background-repeat:no-repeat;
+	border: none;
+	cursor:pointer;
+	overflow: hidden;
+	color: red;
+}
+
+.newDrawingButton{
+	margin-left: 25%;
+	font-size: 20px;
+}
+
+.newDrawingButton:hover{
+	color:blue;
+}
+
+.showLobbyContainer{
+	background-color: lightgrey;
+	height: 58vh;
+}
+
+.editInput{
+	margin-top: 2vh;
+	font-size: 15px;
+}
+
+.editInput:hover{
+	color:blue;
+}
+
+.editRow{
+	margin-top: 8vh;
+	margin-left: 12%;
+	font-family: 'Coming Soon', cursive;
+	width: 75%;
+}
