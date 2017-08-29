@@ -160,6 +160,18 @@ a:hover{
 	color:blue;
 }
 
+.newSubmitButton{
+	background-color: Transparent;
+	background-repeat:no-repeat;
+	border: none;
+	cursor:pointer;
+	overflow: hidden;
+}
+
+.newSubmitButton:hover{
+	color:red;
+}
+
 .showLobbyContainer{
 	background-color: lightgrey;
 	height: 58vh;
