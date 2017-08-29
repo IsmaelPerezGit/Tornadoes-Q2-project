@@ -3,8 +3,11 @@
 ```
 User Stories
  -- As a user when I visit the home page, I see 3 options Login, Create Account, View Drawing
+        -- Completed
  -- When I click create account I redirect to /users/create with create account form
+        -- Completed
  -- When I create account I am redirected to the login page
+        -- 
  -- When I visit the login page, I see the login form
  -- When I log in I can see the drawings Ive saved and options to either create a new drawing or view a existing drawing
  -- When I click on a link, I can see the drawing

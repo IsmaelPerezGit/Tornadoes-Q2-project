@@ -19,7 +19,7 @@ router.post('/new', function(req, res, next){
     bcrypt.hash(req.body.password, 8, function(err, hash) {
     knex.raw(`insert into users (username, password) values ('${req.body.username}', '${hash}')`)
       .then(function(){
-        res.redirect('/login')
+        res.redirect('/users')
       })
     });
   } else {
@@ -35,7 +35,7 @@ router.post('/:id/delete', function(req, res, next){
     });
 });
 
-//Get login form
+// Get login form
 router.get('/login', function(req, res, next){
   res.render('users/login')
 });
