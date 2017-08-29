@@ -2,26 +2,24 @@ extends ../layout
 
 block content
   div(class = "loginContainer")
-    //- img(class="loginBackground" src= "images/login_background.jpg")
     section(class = "row")
       div(class = "col-md-12 indexRow1")
-        h1 Title
+        h1(class = "loginTitle") Canvas
     section(class = "row")
       div(class = "col-md-12 indexRow2")
         form(method="POST" action="/users/login")
-          p Username
-          input(type="text" name="username" placeholder="Enter Username")
+          p(class="loginRow") Username
+          input(type="text" name="username" placeholder="Enter Username" class="loginRow")
           br
           br
-          p Password
-          input(type="text" name="password" placeholder="Enter Password")
+          p(class="loginRow") Password
+          input(type="text" name="password" placeholder="Enter Password" class="loginRow")
           br
-          button
+          button(class = "logInButton")
             a(href='/users/login') Log In      
     section(class = "row")
       div(class = "col-md-12 indexRow3")
-        button
-          a(href='/users/create') Register
-      
-        button
+        button(class = "registerButton")
+          a(href='/users/new') Register
+        button(class = "skipLoginButton")
           a(href='/drawings') Skip Login
