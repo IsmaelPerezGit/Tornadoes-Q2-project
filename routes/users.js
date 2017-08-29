@@ -56,17 +56,13 @@ router.post('/login', function (req,res, next) {
 });
 
 
-//Show single user
-router.get('/:id', function(req, res, next){
-  res.send("single user show page")
-});
 
 
 //Edit user form
 router.get('/:id/edit', function(req, res, next){
-    knex.raw(`select * from users where users.id = ${req.params.id}`)
+    knex.raw(`select * from users where userID = ${req.params.id}`)
       .then(function(data){
-        res.render('users/edit', {data: data.rows[0]})
+        res.render('users/edit', {data: data.rows[0], userID : req.params.id})
     });
 });
 
@@ -80,6 +76,15 @@ router.post('/:id/edit', function(req, res, next){
 
 
 
+//Show single user
+router.get('/:id', function(req, res, next){
+  var userID = req.params.id;
+  knex.raw(`select * from users where id = '${req.params.id}'`)
+  .then(function(user){
+    console.log(user.rows)
+  res.render("users/show", {user: user.rows[0]})
+  })
+});
 
 
 
