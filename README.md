@@ -1,12 +1,12 @@
 # Tornadoes-Q2-project
 
 ```
-User Stories
- -- As a user when I visit the home page, I see 3 options Login, Create Account, View Drawing
- -- When I click create account I redirect to /users/create with create account form
- -- When I create account I am redirected to the login page
- -- When I visit the login page, I see the login form
- -- When I log in I can see the drawings Ive saved and options to either create a new drawing or view a existing drawing
+ User Stories
+ *** -- As a user when I visit the home page, I see 3 options Login, Create Account, View Drawing
+ ***-- When I click create account I redirect to /users/create with create account form
+ ***-- When I create account I am redirected to the login page
+ ***-- When I visit the login page, I see the login form
+ -- When I log in I can see the drawings Ive saved and options to either create a new drawing or  view a existing drawing
  -- When I click on a link, I can see the drawing
  -- From my homepage, I can either start a drawing or pick a chat room
  -- As a user, when I click edit/update, I am redirect to an edit/update form
