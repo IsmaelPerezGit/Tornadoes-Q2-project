@@ -42,6 +42,9 @@ a:hover{
 	color: #3D4849;
 }
 
+.logInInput:hover{
+	color:red;
+}
 
 .loginRow{
 	margin-left: 63.8%;
