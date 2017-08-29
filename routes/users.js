@@ -34,6 +34,14 @@ router.post('/:id/delete', function(req, res, next){
       res.redirect('/')
     });
 });
+//Show Admin page
+
+router.get('/admin', function(req, res, next){
+  knex.raw(`select * from users`)
+  .then(function(data){
+    res.render('users/admin', {data: data.rows})
+  })
+})
 
 // Get login form
 router.get('/login', function(req, res, next){
@@ -47,11 +55,21 @@ router.post('/login', function (req,res, next) {
     var userID = user.rows[0].id
     bcrypt.compare(req.body.password, user.rows[0].password, function (err, resp) {
       if (resp) {
+        if (user.rows[0]["isAdmin"] === true) {
+            res.redirect('/users/admin')
+          // knex.raw(`select * from users`)
+          // .then(function(data){
+          //   res.render(`users/admin`, {data: data.rows})
+          // })
+        }
+        else {
         res.redirect(`/users/${userID}`)
-      } else {
+      }
+    } else {
         res.send("Login failed!")
       }
     })
+
   })
 });
 
@@ -84,7 +102,6 @@ router.get('/:id', function(req, res, next){
   res.render("users/show", {user: user.rows[0]})
   })
 });
-
 
 
 
