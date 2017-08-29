@@ -8,11 +8,11 @@ block content
         div(class = "editRow")
           h1 Edit Profile
           form(method="post" action="/users/#{data.id}/edit")
-            input(type="text", name="username", value="#{data.username}")
+            input(required type="text", name="username", value="#{data.username}")
             br
-            input(type="password", name="password", placeholder="New password")
+            input(required type="password", name="password", placeholder="New password")
             br
-            input(type="password", name="confirm", placeholder="Confirm new password")
+            input(required type="password", name="confirm", placeholder="Confirm new password")
             br
             input(type="submit" value="Submit")
             br
