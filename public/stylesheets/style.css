@@ -133,6 +133,13 @@ a:hover{
 	width: 75%;
 }
 
+.userList{
+	margin-top: 8vh;
+	margin-left: 12%;
+	font-family: 'Coming Soon', cursive;
+	width: 75%;
+}
+
 .showRow button{
 	background-color: Transparent;
 	background-repeat:no-repeat;
