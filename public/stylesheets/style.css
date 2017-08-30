@@ -186,9 +186,56 @@ a:hover{
 	color:blue;
 }
 
+.editRow1{
+	height: 6vh;
+}
+
 .editRow{
 	margin-top: 8vh;
 	margin-left: 12%;
 	font-family: 'Coming Soon', cursive;
 	width: 75%;
+}
+
+.editRow h1{
+	color: red;
+}
+
+.editRow input{
+	font-size: 2.5vh;
+}
+
+.editRow p {
+	font-size: 2.5vh;
+}
+
+.editSubmit{
+	background-color: Transparent;
+	background-repeat:no-repeat;
+	border: none;
+	cursor:pointer;
+	overflow: hidden;
+}
+
+.editSubmit:hover{
+	color:red;
+}
+
+.editTF{
+	width:70%;
+	border: none;
+	background-color: transparent;
+	border-bottom: solid 1px grey;
+}
+
+.loginTF{
+	border: none;
+	background-color: transparent;
+	border-bottom: solid 1px grey;
+}
+
+.newTF{
+	border: none;
+	background-color: transparent;
+	border-bottom: solid 1px grey;
 }
