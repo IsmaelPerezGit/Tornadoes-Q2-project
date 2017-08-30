@@ -2,6 +2,13 @@ extend ../layout
 
 block content
 
-  - for users in data
-    button
-      a(href='/users/#{users.id}') #{users["username"]}
+
+	div(class = "showContainer")
+		section(class = "row")
+			div(class= "col-md-offset-6 col-md-6")
+				div(class = "userList")
+				h1(class = "userList") FRIEND WITH DONKS
+				- for users in data
+					ul
+					a(href='/users/#{users.id}' class = "userList") #{users["username"]}
+
