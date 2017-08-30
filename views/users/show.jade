@@ -9,6 +9,8 @@ block content
 					button(type="button" class="newDrawingButton") Create New Drawing
 					h3 Enter Existing Lobby
 					div(class="showLobbyContainer")
-					
+
 					form(method="get" action='/users/#{user["id"]}/edit')
 						input(type="submit" value="Edit Profile" class="editInput")
+					form(method="get" action='/users/logout')
+						input(type="submit" value="Log Out" class="editInput")
