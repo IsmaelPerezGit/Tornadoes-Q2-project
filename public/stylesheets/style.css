@@ -4,12 +4,12 @@
 }
 
 a {
-  color: #443730;
+	color: #1CACD7;;
 }
 
 
 a:hover{
-	color: red;
+	color: #1DBE72;
 	text-decoration: none;
 }
 
@@ -74,7 +74,6 @@ a:hover{
 	margin-left: 64.5%;
 }
 
-
 .skipLoginButton{
 	background-color: Transparent;
 	background-repeat:no-repeat;
@@ -127,10 +126,14 @@ a:hover{
 }
 
 .showRow{
-	margin-top: 8vh;
+	margin-top: 14vh;
 	margin-left: 12%;
 	font-family: 'Coming Soon', cursive;
 	width: 75%;
+}
+
+.showRow h1{
+	color: red;
 }
 
 .showRow button{
@@ -139,7 +142,7 @@ a:hover{
 	border: none;
 	cursor:pointer;
 	overflow: hidden;
-	color: red;
+	color: #1CACD7;
 }
 
 .showRow input{
@@ -148,7 +151,7 @@ a:hover{
 	border: none;
 	cursor:pointer;
 	overflow: hidden;
-	color: red;
+	color: #1CACD7;
 }
 
 .newDrawingButton{
@@ -157,7 +160,7 @@ a:hover{
 }
 
 .newDrawingButton:hover{
-	color:blue;
+	color: #1DBE72;
 }
 
 .newSubmitButton{
@@ -174,16 +177,17 @@ a:hover{
 
 .showLobbyContainer{
 	background-color: lightgrey;
-	height: 58vh;
+	height: 45vh;
 }
 
 .editInput{
 	margin-top: 2vh;
 	font-size: 15px;
+	color: #1CACD7;
 }
 
 .editInput:hover{
-	color:blue;
+	color: #1DBE72;
 }
 
 .editRow1{
@@ -238,4 +242,12 @@ a:hover{
 	border: none;
 	background-color: transparent;
 	border-bottom: solid 1px grey;
+}
+
+.link{
+	color: #1CACD7;
+}
+
+.link:hover{
+	color: #1DBE72;
 }
