@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  div(class='container')
+    canvas( id='myCanvas' class="drawingboard"  height="100%")
+    div(class= 'message_board')
+    form(id='new_message')
+      input(type='text' id='message' placeholder='enter message here')
+      input(type='submit' value='send')
+    div(class='colors')
+    div(id='palette')
+      div(class='current') Current Color
+  script(src="../canvas.js")
