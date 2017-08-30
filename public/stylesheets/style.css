@@ -251,3 +251,38 @@ a:hover{
 .link:hover{
 	color: #1DBE72;
 }
+
+.userList{
+    margin-top: 0vh;
+    margin-left: 10%;
+    font-family: 'Coming Soon', cursive;
+    width: 75%;
+
+}
+
+.outerContainer{
+	margin-top: 0vh;
+    overflow: scroll;
+    max-height: 500px;
+}
+
+.userListTitle{
+	color: red;
+	margin-top: 15vh;
+    margin-left: 17%;
+    font-family: 'Coming Soon', cursive;
+    width: 75%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

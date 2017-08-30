@@ -2,13 +2,13 @@ extend ../layout
 
 block content
 
-
 	div(class = "showContainer")
 		section(class = "row")
 			div(class= "col-md-offset-6 col-md-6")
+				h1(class = "userListTitle") Administrator Page
 				div(class = "userList")
-				h1(class = "userList") FRIEND WITH DONKS
-				- for users in data
-					ul
-					a(href='/users/#{users.id}' class = "userList") #{users["username"]}
+					div(class = "outerContainer")
+						- for users in data
+							ul
+							a(href='/users/#{users.id}/edit' class = "userList") #{users["username"]}
 

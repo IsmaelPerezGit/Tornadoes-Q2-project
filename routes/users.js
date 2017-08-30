@@ -37,7 +37,7 @@ router.post('/:id/delete', function(req, res, next) {
 //Show Admin page
 
 router.get('/admin', function(req, res, next) {
-  knex.raw(`select * from users`)
+  knex.raw(`select * from users order by username`)
     .then(function(data) {
       res.render('users/admin', {
         data: data.rows
@@ -117,5 +117,5 @@ router.get('/:id', function(req, res, next) {
 
 
 
-//
+
 module.exports = router;
