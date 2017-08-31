@@ -4,12 +4,12 @@
 }
 
 a {
-  color: #443730;
+	color: #1CACD7;;
 }
 
 
 a:hover{
-	color: red;
+	color: #1DBE72;
 	text-decoration: none;
 }
 
@@ -74,7 +74,6 @@ a:hover{
 	margin-left: 64.5%;
 }
 
-
 .skipLoginButton{
 	background-color: Transparent;
 	background-repeat:no-repeat;
@@ -127,10 +126,14 @@ a:hover{
 }
 
 .showRow{
-	margin-top: 8vh;
+	margin-top: 14vh;
 	margin-left: 12%;
 	font-family: 'Coming Soon', cursive;
 	width: 75%;
+}
+
+.showRow h1{
+	color: red;
 }
 
 .showRow button{
@@ -139,7 +142,7 @@ a:hover{
 	border: none;
 	cursor:pointer;
 	overflow: hidden;
-	color: red;
+	color: #1CACD7;
 }
 
 .showRow input{
@@ -148,7 +151,7 @@ a:hover{
 	border: none;
 	cursor:pointer;
 	overflow: hidden;
-	color: red;
+	color: #1CACD7;
 }
 
 .newDrawingButton{
@@ -157,7 +160,7 @@ a:hover{
 }
 
 .newDrawingButton:hover{
-	color:blue;
+	color: #1DBE72;
 }
 
 .newSubmitButton{
@@ -174,16 +177,21 @@ a:hover{
 
 .showLobbyContainer{
 	background-color: lightgrey;
-	height: 58vh;
+	height: 45vh;
 }
 
 .editInput{
 	margin-top: 2vh;
 	font-size: 15px;
+	color: #1CACD7;
 }
 
 .editInput:hover{
-	color:blue;
+	color: #1DBE72;
+}
+
+.editRow1{
+	height: 6vh;
 }
 
 .editRow{
@@ -192,6 +200,7 @@ a:hover{
 	font-family: 'Coming Soon', cursive;
 	width: 75%;
 }
+
 
 .drawContainer{
   width: 50%;
@@ -239,4 +248,106 @@ a:hover{
   border-radius: 50%;
   border: 1px solid black;
   background-color: blue;
+
+}
+
+.editRow h1{
+	color: red;
+}
+
+.editRow input{
+	font-size: 2.5vh;
+}
+
+.editRow p {
+	font-size: 2.5vh;
+}
+
+.editSubmit{
+	background-color: Transparent;
+	background-repeat:no-repeat;
+	border: none;
+	cursor:pointer;
+	overflow: hidden;
+}
+
+.editSubmit:hover{
+	color:red;
+}
+
+.editTF{
+	width:70%;
+	border: none;
+	background-color: transparent;
+	border-bottom: solid 1px grey;
+}
+
+.loginTF{
+	border: none;
+	background-color: transparent;
+	border-bottom: solid 1px grey;
+}
+
+.newTF{
+	border: none;
+	background-color: transparent;
+	border-bottom: solid 1px grey;
+}
+
+.link{
+	color: #1CACD7;
+}
+
+.link:hover{
+	color: #1DBE72;
+}
+
+.userList{
+    margin-top: 0vh;
+    margin-left: 10%;
+    font-family: 'Coming Soon', cursive;
+    width: 75%;
+
+}
+
+.outerContainer{
+	margin-top: 0vh;
+    overflow: scroll;
+    max-height: 500px;
+}
+
+.userListTitle{
+	color: red;
+	margin-top: 15vh;
+    margin-left: 17%;
+    font-family: 'Coming Soon', cursive;
+    width: 75%;
+}
+
+.adminTable{
+	width: 80%;
+}
+
+.tableRow{
+	border-bottom: solid 1px grey;
+}
+
+.tableTop{
+	padding-bottom: 1vh;
+}
+
+.tableData{
+	padding-top: .5vh;
+	padding-bottom: .5vh;
+}
+
+.adminDeleteButton{
+	border: none;
+	background-color: transparent;
+	color: #1CACD7;
+}
+
+.adminDeleteButton:hover{
+	color: #1DBE72;
+
 }

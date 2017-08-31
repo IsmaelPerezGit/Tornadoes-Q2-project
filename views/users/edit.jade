@@ -3,18 +3,32 @@ extends ../layout
 block content
 
   div(class = "showContainer")
+    section(class = "row editRow1")
+      div(class="col-md-12")
     section(class = "row")
       div(class= "col-md-offset-6 col-md-5")
         div(class = "editRow")
           h1 Edit Profile
+          br
           form(method="post" action="/users/#{data.id}/edit")
-            input(required type="text", name="username", value="#{data.username}")
+            p Edit Username. Current username is #{data.username}
+            input(required type="text", name="username", value="#{data.username}" class="editTF")
             br
-            input(required type="password", name="password", placeholder="New password")
             br
-            input(required type="password", name="confirm", placeholder="Confirm new password")
             br
-            input(type="submit" value="Submit")
+            p Enter to change password
+            input(required type="password", name="password", placeholder="Password" class="editTF")
+            br
+            br
+            p Confirm new password
+            input(required type="password", name="confirm", placeholder="Password" class="editTF")
+            br
+            br
+            br
+            input(type="submit" value="Submit" class="editSubmit link")
+            br
+            br
+            br
             br
           form(method="post", action="/users/#{data.id}/delete")
-            input(type="submit" value="Delete Account")
+            input(type="submit" value="Delete Account" class="editSubmit link")
