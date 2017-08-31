@@ -154,9 +154,30 @@ a:hover{
 	color: #1CACD7;
 }
 
-.newDrawingButton{
+.showButton{
+	font-size: 4vh;
+}
+
+.showButton:hover{
+	color: #1DBE72;
+}
+
+.personalRoomButton{
+	margin-left: 14%;
+}
+
+.editProfileButton{
 	margin-left: 25%;
-	font-size: 20px;
+}
+
+.logoutButton{
+	margin-left: 29%;
+}
+
+.newDrawingButton{
+	margin-top: 2vh;
+	margin-left: 8%;
+	font-size: 4vh;
 }
 
 .newDrawingButton:hover{
