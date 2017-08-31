@@ -334,7 +334,7 @@ a:hover{
 .outerContainer{
 	margin-top: 0vh;
     overflow: scroll;
-    max-height: 500px;
+    max-height: 450px;
 }
 
 .userListTitle{
@@ -412,9 +412,3 @@ margin-top:15.5%;
 
 
 }
-
-
-
-
-
-
