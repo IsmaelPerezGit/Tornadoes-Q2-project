@@ -599,5 +599,9 @@ margin-left: 13%;
 		height: 20px;
 		margin-left: 16%;
 		width: 100%;
+	}
 
+	.errorRegister{
+		font-family: 'Coming Soon', cursive;
+		font-size: 4vh;
 	}
