@@ -15,16 +15,25 @@ router.get('/new', function(req, res, next) {
 
 //Post new user to database
 router.post('/new', function(req, res, next) {
-  if (req.body.password === req.body.confirm) {
-    bcrypt.hash(req.body.password, 8, function(err, hash) {
-      knex.raw(`insert into users (username, password) values ('${req.body.username}', '${hash}')`)
-        .then(function() {
-          res.redirect('/users')
-        })
-    });
-  } else {
-    res.send("Passwords do not match")
-  };
+    knex.raw(`select * from users`)
+      .then(function(data){
+        for (var i = 0; i < data.rows.length; i++){
+          if(req.body.username === data.rows[i]["username"]) {
+            res.send("Please choose a new username")
+          } else {
+            if (req.body.password === req.body.confirm) {
+              bcrypt.hash(req.body.password, 8, function(err, hash) {
+                knex.raw(`insert into users (username, password) values ('${req.body.username}', '${hash}')`)
+                .then(function() {
+                  res.redirect('/users')
+                })
+              });
+            } else {
+              res.send("Passwords do not match")
+            };
+          }
+        }
+      })
 });
 
 //Delete user from database
