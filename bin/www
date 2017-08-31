@@ -57,6 +57,10 @@ io.sockets.on('connection', function(socket){
   }
 })
 
+socket.on("clear", function(data){
+  socket.emit("clear", {clear: data.clear})
+})
+
 socket.on("new_message", function(data){
   messages.push({name: data.user, message: data.message})
   io.emit("post_new_message", {new_message: data.message, user: data.user})

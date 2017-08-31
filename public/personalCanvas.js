@@ -1,10 +1,9 @@
-var socket = io.connect();
 
 var clientColor = 'rbg(0,0,0)';
 buildPalette();
 
 $(document).ready(function() {
-
+console.log('here')
 $('.green').css('background-color', '#39CA74');
 $('.blue').css('background-color', '#3B99D8');
 $('.purple').css('background-color', '#9A5CB4');
@@ -22,50 +21,14 @@ $('.red').css('background-color', '#E54E42');
 	});
 
 
-	var current_user;
-
-	var new_user = function() {
-		var name = $('#nickname').val();
-		socket.emit("page_load", {user: name});
-
-	}
-
-	new_user();
 
 	$('#reset').click(function(data){
 		var canvas = $('#myCanvas')[0];
 	 	canvas.width = canvas.width;
-		socket.emit("clear", {clear: data.clear})
+
 	})
 
-	socket.on("existing_user", function(data){
-		$("#error").html(data.error)
-		new_user();
-	})
-
-	socket.on("load_messages", function(data){
-		$("#error").html("") //resetting the error message
-		current_user = data.current_user;
-		var messages = data.messages;
-		var messages_thread = "";
-
-		for (var i = 0; i < messages.length; i++){
-			messages_thread += "<p>" + messages[i].name + ": " + messages[i].message + "</p>";
-		}
-
-		$(".message_board").append(messages_thread);
-	})
-
-	$("#new_message").submit(function(){
-		socket.emit("new_message", {message: $("#message").val(), user: current_user});
-		$("#message").val("");
-		return false;
-	})
-
-	socket.on("post_new_message", function(data) {
-		$(".message_board").append("<p>" + data.user + ": " + data.new_message + "</p>");
-	})
-})
+});
 
 function buildPalette(){
 	var colors = ['#39CA74',
@@ -130,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-	socket.on("draw_line", function(data) {
+function drawLine(data){
 
 		var line = data.line;
 		context.beginPath();
@@ -139,11 +102,11 @@ document.addEventListener("DOMContentLoaded", function() {
 		context.moveTo(line[0].x - 150, line[0].y );
 		context.lineTo(line[1].x - 150, line[1].y );
 		context.stroke();
-	});
+	};
 
 	function draw() {
 		if (mouse.click && mouse.move && mouse.pos_prev) {
-			socket.emit("draw_line", { line: [mouse.pos, mouse.pos_prev, clientColor] });
+			drawLine({ line: [mouse.pos, mouse.pos_prev, clientColor] });
 			mouse.move = false;
 		}
 		mouse.pos_prev = {x: mouse.pos.x, y: mouse.pos.y};

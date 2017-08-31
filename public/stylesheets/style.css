@@ -192,3 +192,51 @@ a:hover{
 	font-family: 'Coming Soon', cursive;
 	width: 75%;
 }
+
+.drawContainer{
+  width: 50%;
+
+}
+#myCanvas{
+  display: inline-block;
+  width: 70%;
+  height: 480px;
+  border: 1px solid black;
+}
+.message_board {
+  display:inline-block;
+  vertical-align: top;
+  overflow-y: scroll;
+  text-overflow: ellipsis;
+  white-space:pre-line;
+  width: 25%;
+  height: 480px;
+  border: 1px solid black;
+}
+
+
+#new_message{
+  vertical-align: top;
+  margin-left: 70%;
+}
+
+#new_message input:first-child {
+  width: 80%;
+}
+
+.colors{
+  display: inline-block;
+}
+
+.current {
+  width: 100px;
+}
+
+.color{
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-color: blue;
+}
