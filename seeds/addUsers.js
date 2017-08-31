@@ -14,6 +14,18 @@ exports.seed = function(knex, Promise) {
         {username: 'johnny', password: `${bcrypt.hashSync('johnny', saltRounds)}`, isAdmin: false},
         {username: 'ismael', password: `${bcrypt.hashSync('ismael', saltRounds)}`, isAdmin: false},
         {username: 'admin', password: `${bcrypt.hashSync('admin', saltRounds)}`, isAdmin: true},
+        {username: 'Donatello', password: `${bcrypt.hashSync('test', saltRounds)}`, isAdmin: false},
+        {username: 'Michaelangelo', password: `${bcrypt.hashSync('test', saltRounds)}`, isAdmin: false},
+        {username: 'Raphael', password: `${bcrypt.hashSync('test', saltRounds)}`, isAdmin: false},
+        {username: 'Leonardo', password: `${bcrypt.hashSync('test', saltRounds)}`, isAdmin: false},
+        {username: 'Master Splinter', password: `${bcrypt.hashSync('test', saltRounds)}`, isAdmin: false},
+        {username: 'Shredder', password: `${bcrypt.hashSync('test', saltRounds)}`, isAdmin: false},
+        {username: 'Blue Power Ranger', password: `${bcrypt.hashSync('test', saltRounds)}`, isAdmin: false},
+        {username: 'Yellow Power Ranger', password: `${bcrypt.hashSync('test', saltRounds)}`, isAdmin: false},
+        {username: 'Red Power Ranger', password: `${bcrypt.hashSync('test', saltRounds)}`, isAdmin: false},
+        {username: 'Green Power Ranger', password: `${bcrypt.hashSync('test', saltRounds)}`, isAdmin: false},
+        {username: 'Black Power Ranger', password: `${bcrypt.hashSync('test', saltRounds)}`, isAdmin: false},
+        {username: 'White Power Ranger', password: `${bcrypt.hashSync('test', saltRounds)}`, isAdmin: false},
       ]);
     });
 };
