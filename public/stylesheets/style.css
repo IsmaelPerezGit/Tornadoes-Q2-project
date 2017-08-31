@@ -274,15 +274,29 @@ a:hover{
     width: 75%;
 }
 
+.adminTable{
+	width: 80%;
+}
 
+.tableRow{
+	border-bottom: solid 1px grey;
+}
 
+.tableTop{
+	padding-bottom: 1vh;
+}
 
+.tableData{
+	padding-top: .5vh;
+	padding-bottom: .5vh;
+}
 
+.adminDeleteButton{
+	border: none;
+	background-color: transparent;
+	color: #1CACD7;
+}
 
-
-
-
-
-
-
-
+.adminDeleteButton:hover{
+	color: #1DBE72;
+}

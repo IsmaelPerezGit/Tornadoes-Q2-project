@@ -8,7 +8,15 @@ block content
 				h1(class = "userListTitle") Administrator Page
 				div(class = "userList")
 					div(class = "outerContainer")
-						- for users in data
-							ul
-							a(href='/users/#{users.id}/edit' class = "userList") #{users["username"]}
-
+						table(class="adminTable")
+							colgroup(span='2')
+								tr(class="tableRow")
+									td(class = "tableTop") Edit User
+									td(class = "tableTop") Delete User
+							- for users in data
+								tr(class = "tableRow")
+									td(class = "tableData")
+										a(href='/users/#{users.id}/edit') #{users["username"]}
+									td(class = "tableData")
+										form(method="POST" action='/users/#{users.id}/delete')
+											button(class="adminDeleteButton" type="submit") Delete
