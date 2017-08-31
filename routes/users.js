@@ -32,19 +32,13 @@ router.post('/new', function(req, res, next) {
 router.post('/:id/delete', function(req, res, next) {
   knex.raw(`delete from users where users.id = ${req.params.id}`)
     .then(function() {
-      res.redirect('/')
+      if (req.signedCookies["admin"] === "true") {
+          res.redirect('/users/admin')
+        } else {
+          res.redirect('/')
+        }
     });
 });
-//Show Admin page
-
-router.get('/admin', function(req, res, next) {
-  knex.raw(`select * from users order by username`)
-    .then(function(data) {
-      res.render('users/admin', {
-        data: data.rows
-      })
-    })
-})
 
 // Get login form
 router.get('/login', function(req, res, next) {
@@ -62,11 +56,8 @@ router.post('/login', function(req, res, next) {
             signed: true
           })
           if (user.rows[0]["isAdmin"] === true) {
+            res.cookie('admin', true, {signed: true})
             res.redirect('/users/admin')
-            // knex.raw(`select * from users`)
-            // .then(function(data){
-            //   res.render(`users/admin`, {data: data.rows})
-            // })
           } else {
             res.redirect(`/users/${userID}`)
           }
@@ -77,6 +68,19 @@ router.post('/login', function(req, res, next) {
 
     })
 });
+
+//Show Admin page
+
+router.get('/admin', function(req, res, next){
+  knex.raw(`select * from users order by username`)
+  .then(function(data){
+    if(req.signedCookies["admin"] === "true"){
+      res.render('users/admin', {data: data.rows})
+    } else {
+      res.send('Unauthorized Access! Administrator only!')
+    }
+  })
+})
 
 //Edit user form
 router.get('/:id/edit', function(req, res, next) {
