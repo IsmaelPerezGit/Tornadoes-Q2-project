@@ -1,12 +1,12 @@
 extends ../layout
 
 block content
-  div(class='container')
+  div(class='drawContainer')
     canvas( id='myCanvas' class="drawingboard"  height="100%")
     div(class='colors')
     a(href='/users/#{user["id"]}')
-      button(type='button') Back to Dashboard
+    button(type='button' id='backTo') Back to Dashboard
+    button(id='resetInd' type='button') Reset Canvas
     div(id='palette')
       div(class='current') Current Color
-    button(id='reset' type='button') Reset Canvas
   script(src="../personalCanvas.js")
