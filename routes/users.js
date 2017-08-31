@@ -102,8 +102,6 @@ router.post('/:id/edit', function(req, res, next) {
   };
 });
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 //clear cookies for user login
 router.get('/logout', function (req,res,next) {
   res.clearCookie('admin')
@@ -111,10 +109,6 @@ router.get('/logout', function (req,res,next) {
   res.redirect('/users')
 })
 
-=======
->>>>>>> drawPageCSS
-=======
->>>>>>> drawPageCSS
 //Show single user
 router.get('/:id', function(req, res, next) {
   var userID = req.params.id;
