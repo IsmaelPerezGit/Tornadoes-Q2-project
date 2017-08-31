@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  div(class = "newContainer")
+    section(class = "row")
+        div(class = "col-md-7 col-md-offset-3 newRow1")
+          h1(class = "newTitle") Passwords did not match, please try again
+          br
+          br
+          br
+          button(class = "registerButton")
+            a(href='/users/new' class = "errorRegister") Try again

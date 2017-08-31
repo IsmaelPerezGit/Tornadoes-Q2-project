@@ -13,13 +13,18 @@ router.get('/new', function(req, res, next) {
   res.render('users/new')
 });
 
+//Error
+// router.get('/error', function(req, res, next){
+//   res.render('users/error')
+// })
+
 //Post new user to database
 router.post('/new', function(req, res, next) {
     knex.raw(`select * from users`)
       .then(function(data){
         for (var i = 0; i < data.rows.length; i++){
           if(req.body.username === data.rows[i]["username"]) {
-            res.send("Please choose a new username")
+            res.render('users/errorName', {data: "Please choose a new username"})
           } else {
             if (req.body.password === req.body.confirm) {
               bcrypt.hash(req.body.password, 8, function(err, hash) {
@@ -29,7 +34,7 @@ router.post('/new', function(req, res, next) {
                 })
               });
             } else {
-              res.send("Passwords do not match")
+              res.render('users/errorPW')
             };
           }
         }
