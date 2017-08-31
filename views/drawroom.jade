@@ -2,17 +2,19 @@ extends layout
 
 block content
   div(class = "drawContainer")
-    div(class='container')
+    div(class='container-fluid')
       canvas( id='myCanvas' class="drawingboard"  height="100%")
-      div(class= 'message_board')
+      div(class='message_board')
+      a(href='/users/#{user["id"]}')
+        button(type='button' id='backTo') Back to Dashboard
+      button(id='reset' type='button') Reset Canvas
       input(type='hidden' id='nickname' value="#{user['username']}")
       form(id='new_message')
         input(type='text' id='message' placeholder='enter message here')
-        input(type='submit' value='send')
       div(class='colors')
-      a(href='/users/#{user["id"]}')
-        button(type='button') Back to Dashboard
-      div(id='palette')
-        div(class='current') Current Color
-      button(id='reset' type='button') Reset Canvas
+      div(id='palette' class="container-fluid")
+        div(class='current container-fluid')
+          div(class='currentText') Current Color
     script(src="../canvas.js")
+    
+    

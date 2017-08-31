@@ -46,6 +46,10 @@ var is_user = function(user) {
   return false;
 }
 
+function updateClients() {
+        io.sockets.emit('update', users);
+    };
+
 io.sockets.on('connection', function(socket){
   console.log('user connected', socket.id);
   socket.on("page_load", function(data){
@@ -74,8 +78,11 @@ socket.on("new_message", function(data){
 		io.emit("draw_line", { line: data.line } );
 	});
 
-	socket.on('disconnect', function(){
+	socket.on('disconnect', function(socket){
     	console.log('user disconnected');
+      users.splice(users.indexOf(socket.user), 1);
+      updateClients();
+
     });
 
 
