@@ -351,3 +351,44 @@ a:hover{
 	color: #1DBE72;
 
 }
+
+.drawContainer{
+	background-image: url("/images/planks2.jpeg");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	width: 100%;
+	height: 100vh;
+	background-size:100% 100%;
+}
+
+.drawingboard{
+	background-color: this command will clear the backgroun d;
+	margin-top: 20%;
+	margin-left: 5%;
+	width: 90%;
+}
+
+.message_board{
+	margin-top: 20%;
+}
+
+.container{
+margin-right:0px;
+padding:0;
+margin-left:9.5%;
+}
+
+#myCanvas {
+width:82%;
+height:72.7vh;
+margin-top:15.5%;
+
+
+}
+
+
+
+
+
+

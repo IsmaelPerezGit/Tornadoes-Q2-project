@@ -1,8 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex')
-var bcrypt = require('bcrypt');
-
+var bcrypt = require('bcrypt')
 
 //Splash page
 router.get('/', function(req, res, next) {
@@ -58,9 +57,6 @@ router.post('/login', function(req, res, next) {
       var userID = user.rows[0].id
       bcrypt.compare(req.body.password, user.rows[0].password, function(err, resp) {
         if (resp) {
-          res.cookie('userid', user.rows[0].id, {
-            signed: true
-          })
           if (user.rows[0]["isAdmin"] === true) {
             res.redirect('/users/admin')
             // knex.raw(`select * from users`)
@@ -102,27 +98,16 @@ router.post('/:id/edit', function(req, res, next) {
   };
 });
 
-//clear cookies for user login
-router.get('/logout', function (req,res,next) {
-  res.clearCookie('userid')
-  res.redirect('/users')
-})
-
 //Show single user
 router.get('/:id', function(req, res, next) {
+  var userID = req.params.id;
   knex.raw(`select * from users where id = '${req.params.id}'`)
-  .then(function(user) {
-    if (req.signedCookies["userid"] === req.params.id || user.rows[0].isAdmin === true) {
-      var userID = req.params.id;
+    .then(function(user) {
       res.render("users/show", {
         user: user.rows[0]
       })
-    } else {
-      res.send("Unathorized access")
-    }
-  })
+    })
 });
-
 
 
 
