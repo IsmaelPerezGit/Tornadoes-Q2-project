@@ -108,6 +108,7 @@ router.post('/:id/edit', function(req, res, next) {
 
 //clear cookies for user login
 router.get('/logout', function (req,res,next) {
+  res.clearCookie('admin')
   res.clearCookie('userid')
   res.redirect('/users')
 })

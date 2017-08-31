@@ -349,5 +349,9 @@ a:hover{
 
 .adminDeleteButton:hover{
 	color: #1DBE72;
+}
 
+.adminLogout{
+	background-color: transparent;
+	border: none;
 }

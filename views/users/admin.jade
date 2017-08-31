@@ -20,3 +20,5 @@ block content
 									td(class = "tableData")
 										form(method="POST" action='/users/#{users.id}/delete')
 											button(class="adminDeleteButton" type="submit") Delete
+					form(method="get" action='/users/logout')
+						input(type="submit" value="Log Out From Admin" class="editInput adminLogout")
