@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.redirect('/users');
 });
 
+router.get("/nouserDraw", function(req, res){
+  res.render('nonuserDraw.jade');
+})
+
 module.exports = router;
