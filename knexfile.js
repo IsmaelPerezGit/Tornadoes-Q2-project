@@ -31,10 +31,12 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: 'postgres://qetkdkynlnqqme:6c609d71d0419fbb2a7de7f5a1a4f329a6c3b6e738a97f57e4d348b091776114@ec2-204-236-236-188.compute-1.amazonaws.com:5432/d4emghjonvc0a2',
+    debug: true,
+    connection: 'postgres://qetkdkynlnqqme:6c609d71d0419fbb2a7de7f5a1a4f329a6c3b6e738a97f57e4d348b091776114@ec2-204-236-236-188.compute-1.amazonaws.com:5432/d4emghjonvc0a2'
+    },
     seeds: {
       directory: './seeds'
-    }
-  }
+  },
+  ssl: true
 
 };
