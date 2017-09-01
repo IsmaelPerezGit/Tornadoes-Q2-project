@@ -2,12 +2,18 @@ extends ../layout
 
 block content
   div(class='drawContainer')
+    
     canvas( id='myCanvas' class="drawingboard"  height="100%")
-    div(class='colors')
-    a(href='/users/#{user["id"]}')
-      button(type='button' id='backTo') Back to Dashboard
-    button(id='reset' type='button') Reset Canvas
-  div(class='col-md-12 col-md-offset-2 text')
-    div(id='palette')
-      div(class='current') Current Color
-  script(src="../personalCanvas.js")
+    
+    section(class="row")
+      div(class = "col-md-12 personalMenu")
+        a(href='/users/#{user["id"]}')
+          button(type='button' id='backTo') Back to Dashboard
+    
+        button(id='reset' type='button') Reset Canvas
+    
+    section(class="row")
+      div(class = "col-md-7 col-md-offset-2 colorMenu")
+          div(id='palette')
+            div(class='current') Current Color
+        script(src="../personalCanvas.js")
