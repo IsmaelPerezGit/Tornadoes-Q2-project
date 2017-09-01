@@ -1,16 +1,17 @@
+
 module.exports = {
 
   development: {
     client: 'pg',
     connection: {
       database: 'q2db',
-      host: '127.0.0.1'
+      host: 'https://pacific-cove-35046.herokuapp.com/'
     },
     seeds: {
       directory: './seeds'
     }
   },
-  
+
   staging: {
     client: 'postgresql',
     connection: {
@@ -28,18 +29,13 @@ module.exports = {
   },
 
   production: {
-    client: 'postgresql',
+    client: 'pg',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      database: 'q2db',
+      host: 'https://pacific-cove-35046.herokuapp.com/'
     },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: 'knex_migrations'
+    seeds: {
+      directory: './seeds'
     }
   }
 

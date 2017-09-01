@@ -4,7 +4,6 @@ var knex = require('../db/knex')
 var bcrypt = require('bcrypt')
 
 
-
 router.get('/:id', function(req, res){
   knex.raw(`SELECT * FROM users where users.id=${req.params.id}`)
   .then(function(data){
