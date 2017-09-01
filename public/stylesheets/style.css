@@ -435,11 +435,11 @@ margin-left: 13%;
 }
 
 #palette{
-	margin-left: 22%;
 	padding: 0;
-	width: 50%;
+	width: 100%;
 	height: 5vh;
 	background-color: #F5F2EF;
+	text-align: center;
 }
 #backTo{
 	margin-left: 33.5%;
@@ -604,4 +604,8 @@ margin-left: 13%;
 	.errorRegister{
 		font-family: 'Coming Soon', cursive;
 		font-size: 4vh;
+	}
+
+	.text{
+		margin: 0;
 	}
