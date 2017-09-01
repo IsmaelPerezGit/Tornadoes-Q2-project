@@ -36,7 +36,7 @@ module.exports = {
     migrations: {
       tableName: 'users'
     },
-    ?ssl: true,
+    ssl: true,
 
     },
     seeds: {
