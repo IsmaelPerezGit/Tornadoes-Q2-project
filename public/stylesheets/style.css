@@ -403,11 +403,11 @@ body{
 }
 
 .message_board{
-	margin-top: 12.5%;
 	margin-left: 10px;
 	height: 72.7vh;
 	width: 18%;
 	background-color: #F5F2EF;
+	margin-top: 11%;
 }
 
 .container{
@@ -550,7 +550,7 @@ margin-left: 13%;
 	 }
 	 .currentText{
 		 height: 20px;
-		 margin-left: 16%;
+		 margin-left: 25%;
 		 width: 100%;
 
 	 }
@@ -608,4 +608,8 @@ margin-left: 13%;
 
 	.text{
 		margin: 0;
+	}
+
+	.lastFix{
+		margin-left: 30%;
 	}
