@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  div(class='drawContainer')
+    canvas( id='myCanvas' class="drawingboard"  height="100%")
+    div(class='colors')
+    a(href='/')
+      button(type='button') Back to login
+    div(id='palette')
+      div(class='current') Current Color
+    button(id='reset' type='button') Reset Canvas
+  script(src="../personalCanvas.js")

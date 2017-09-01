@@ -11,16 +11,16 @@ block content
           h1 Edit Profile
           br
           form(method="post" action="/users/#{data.id}/edit")
-            p Edit Username. Current username is #{data.username}
+            p Edit Username:
             input(required type="text", name="username", value="#{data.username}" class="editTF")
             br
             br
             br
-            p Enter to change password
+            p Enter to change password:
             input(required type="password", name="password", placeholder="Password" class="editTF")
             br
             br
-            p Confirm new password
+            p Confirm new password:
             input(required type="password", name="confirm", placeholder="Password" class="editTF")
             br
             br

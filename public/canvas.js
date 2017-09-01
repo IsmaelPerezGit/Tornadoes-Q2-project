@@ -101,8 +101,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 
 	var canvas = document.getElementById("myCanvas");
-	canvas.width = window.innerWidth/2.5;
-	canvas.height = window.innerHeight;
+	canvas.width = canvas.offsetWidth;
+	canvas.height = canvas.offsetHeight;
 	var context = canvas.getContext("2d");
 
 
@@ -124,24 +124,34 @@ document.addEventListener("DOMContentLoaded", function() {
 	};
 
 	function getMouse(e) {
-	    mouse.pos.x = e.clientX;
-	    mouse.pos.y = e.clientY;
+			console.log(e);
+	    mouse.pos.x = getMousePos(canvas, e).x;
+	    mouse.pos.y = getMousePos(canvas, e).y;
+	}
+
+	function getMousePos(canvas, evt) {
+	    var rect = canvas.getBoundingClientRect();
+	    return {
+	      x: evt.clientX - rect.left,
+	      y: evt.clientY - rect.top
+	    };
 	}
 
 
 
 	socket.on("draw_line", function(data) {
-
+		// console.log(data);
 		var line = data.line;
 		context.beginPath();
 		context.lineWidth = 2;
 		context.strokeStyle = line[2];
-		context.moveTo(line[0].x - 150, line[0].y );
-		context.lineTo(line[1].x - 150, line[1].y );
+		context.moveTo(line[0].x, line[0].y );
+		context.lineTo(line[1].x, line[1].y );
 		context.stroke();
 	});
 
 	function draw() {
+		console.log(mouse.pos);
 		if (mouse.click && mouse.move && mouse.pos_prev) {
 			socket.emit("draw_line", { line: [mouse.pos, mouse.pos_prev, clientColor] });
 			mouse.move = false;

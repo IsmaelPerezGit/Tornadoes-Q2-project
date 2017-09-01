@@ -1,7 +1,5 @@
 var bcrypt = require('bcrypt');
 const saltRounds = 7;
-var pgp = require("pg-promise");
-var db = pgp("postgres://${process.env.DATA_DB_USER}:${process.env.DATA_DB_PASS}@${process.env.DATA_DB_HOST}/gonano");
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
   return knex('users').del()

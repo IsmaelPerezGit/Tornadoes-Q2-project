@@ -12,37 +12,45 @@ router.get('/new', function(req, res, next) {
   res.render('users/new')
 });
 
+//Error
+// router.get('/error', function(req, res, next){
+//   res.render('users/error')
+// })
+
 //Post new user to database
 router.post('/new', function(req, res, next) {
-  if (req.body.password === req.body.confirm) {
-    bcrypt.hash(req.body.password, 8, function(err, hash) {
-      knex.raw(`insert into users (username, password) values ('${req.body.username}', '${hash}')`)
-        .then(function() {
-          res.redirect('/users')
-        })
-    });
-  } else {
-    res.send("Passwords do not match")
-  };
+    knex.raw(`select * from users`)
+      .then(function(data){
+        for (var i = 0; i < data.rows.length; i++){
+          if(req.body.username === data.rows[i]["username"]) {
+            res.render('users/errorName', {data: "Please choose a new username"})
+          } else {
+            if (req.body.password === req.body.confirm) {
+              bcrypt.hash(req.body.password, 8, function(err, hash) {
+                knex.raw(`insert into users (username, password) values ('${req.body.username}', '${hash}')`)
+                .then(function() {
+                  res.redirect('/users')
+                })
+              });
+            } else {
+              res.render('users/errorPW')
+            };
+          }
+        }
+      })
 });
 
 //Delete user from database
 router.post('/:id/delete', function(req, res, next) {
   knex.raw(`delete from users where users.id = ${req.params.id}`)
     .then(function() {
-      res.redirect('/')
+      if (req.signedCookies["admin"] === "true") {
+          res.redirect('/users/admin')
+        } else {
+          res.redirect('/')
+        }
     });
 });
-//Show Admin page
-
-router.get('/admin', function(req, res, next) {
-  knex.raw(`select * from users order by username`)
-    .then(function(data) {
-      res.render('users/admin', {
-        data: data.rows
-      })
-    })
-})
 
 // Get login form
 router.get('/login', function(req, res, next) {
@@ -56,15 +64,9 @@ router.post('/login', function(req, res, next) {
       var userID = user.rows[0].id
       bcrypt.compare(req.body.password, user.rows[0].password, function(err, resp) {
         if (resp) {
-          res.cookie('userid', user.rows[0].id, {
-            signed: true
-          })
           if (user.rows[0]["isAdmin"] === true) {
+            res.cookie('admin', true, {signed: true})
             res.redirect('/users/admin')
-            // knex.raw(`select * from users`)
-            // .then(function(data){
-            //   res.render(`users/admin`, {data: data.rows})
-            // })
           } else {
             res.redirect(`/users/${userID}`)
           }
@@ -75,6 +77,19 @@ router.post('/login', function(req, res, next) {
 
     })
 });
+
+//Show Admin page
+
+router.get('/admin', function(req, res, next){
+  knex.raw(`select * from users order by username`)
+  .then(function(data){
+    if(req.signedCookies["admin"] === "true"){
+      res.render('users/admin', {data: data.rows})
+    } else {
+      res.send('Unauthorized Access! Administrator only!')
+    }
+  })
+})
 
 //Edit user form
 router.get('/:id/edit', function(req, res, next) {
@@ -102,25 +117,21 @@ router.post('/:id/edit', function(req, res, next) {
 
 //clear cookies for user login
 router.get('/logout', function (req,res,next) {
+  res.clearCookie('admin')
   res.clearCookie('userid')
   res.redirect('/users')
 })
 
 //Show single user
 router.get('/:id', function(req, res, next) {
+  var userID = req.params.id;
   knex.raw(`select * from users where id = '${req.params.id}'`)
-  .then(function(user) {
-    if (req.signedCookies["userid"] === req.params.id || user.rows[0].isAdmin === true) {
-      var userID = req.params.id;
+    .then(function(user) {
       res.render("users/show", {
         user: user.rows[0]
       })
-    } else {
-      res.send("Unathorized access")
-    }
-  })
+    })
 });
-
 
 
 

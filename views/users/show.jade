@@ -7,12 +7,21 @@ block content
 				div(class = "showRow")
 					h1 Welcome to Canvas, #{user.username}
 					a(href='/personalDraw/#{user["id"]}')
-						button(type="button" class="newDrawingButton") Create New Drawing
-					h3 Enter Existing Lobby
-					div(class="showLobbyContainer")
-						form(method='get' action='/drawroom/#{user["id"]}')
-							input(type='submit' value='Donk Nation channel')
-					form(method="get" action='/users/#{user["id"]}/edit')
-						input(type="submit" value="Edit Profile" class="editInput")
-					form(method="get" action='/users/logout')
-						input(type="submit" value="Log Out" class="editInput")
+						button(type="button" class="newDrawingButton") Create Personal Drawing
+					br
+					br
+					br
+					a(href='/drawroom/#{user["id"]}')
+						button(type="button" class="showButton personalRoomButton") Enter Party Drawing
+					br
+					br
+					br
+					br
+					br
+					br
+					a(href='/users/#{user["id"]}/edit')
+						button(type="button" class="showButton editProfileButton") Edit Profile
+					br
+					br
+					a(href='/users/logout')
+						button(type="button" class="showButton logoutButton") Log Out
