@@ -5,7 +5,7 @@ module.exports = {
     client: 'pg',
     connection: {
       database: 'q2db',
-      host: '50.19.85.156'
+      host: 'https://sheltered-hollows-36302.herokuapp.com/'
     },
     seeds: {
       directory: './seeds'
@@ -32,7 +32,7 @@ module.exports = {
     client: 'pg',
     connection: {
       database: 'q2db',
-      host: '50.19.85.156'
+      host: 'https://sheltered-hollows-36302.herokuapp.com/'
     },
     seeds: {
       directory: './seeds'
