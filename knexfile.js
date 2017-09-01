@@ -5,7 +5,7 @@ module.exports = {
     client: 'pg',
     connection: {
       database: 'q2db',
-      host: 'https://pacific-cove-35046.herokuapp.com/'
+      host: '50.19.85.156'
     },
     seeds: {
       directory: './seeds'
@@ -32,7 +32,7 @@ module.exports = {
     client: 'pg',
     connection: {
       database: 'q2db',
-      host: 'https://pacific-cove-35046.herokuapp.com/'
+      host: '50.19.85.156'
     },
     seeds: {
       directory: './seeds'
